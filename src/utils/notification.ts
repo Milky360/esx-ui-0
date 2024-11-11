@@ -1,4 +1,4 @@
-import { closeIcon } from "@src/components/icons";
+import { closeIcon } from "@/components/icons";
 import { notification } from "antd";
 import React from "react";
 

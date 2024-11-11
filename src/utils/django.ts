@@ -1,7 +1,7 @@
-import { ApiResponse } from "@src/types/ITypes";
+import { ApiResponse } from "@/types/ITypes";
 import { BACKEND_URL } from "./config";
 import constants from "./config";
-import { getSession } from "@src/utils/getSession";
+import { getSession } from "@/utils/getSession";
 
 // Function to format the route only if needed
 const getUrl = (route: string, params?: Record<string, string | number>) => {

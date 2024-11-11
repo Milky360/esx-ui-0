@@ -1,5 +1,5 @@
 "use client";
-import { CustomButtonProps } from "@src/types/ITypes";
+import { CustomButtonProps } from "@/types/ITypes";
 import { Button } from "antd";
 import React from "react";
 

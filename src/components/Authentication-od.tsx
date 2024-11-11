@@ -4,13 +4,13 @@ import React, { useRef, useState } from "react";
 import { CustomButton } from "./CustomButton";
 import { CustomIcon, GoogleIcon, LinkedInIcon, OrIcon } from "./icons";
 import type { FormProps, MenuProps } from "antd";
-import { Checkbox, Form, Input, Dropdown, Menu, Space } from "antd";
+import { Checkbox, Form, Input, Dropdown, Menu, Space, Modal } from "antd";
 import { DownOutlined } from "@ant-design/icons";
-import { openNotification } from "@src/utils/notification";
-import TextWrapper from "@src/components/TextWrapper";
+import { openNotification } from "@/utils/notification";
+import TextWrapper from "@/components/TextWrapper";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ComponentProps, FieldType } from "@src/types/IUser";
+import { ComponentProps, FieldType } from "@/types/IUser";
 
 const Authentication: React.FC<ComponentProps> = ({ close, token }) => {
   const router = useRouter();

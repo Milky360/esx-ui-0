@@ -1,4 +1,4 @@
-import { execute } from "@src/utils/django";
+import { execute } from "@/utils/django";
 import { getSession } from "next-auth/react";
 
 export default async function fetch_me(
