@@ -1,0 +1,6 @@
+{
+  "investmentHighlightsAndCharts": [
+    { "key": 1, "image": "/assets/charts/chart1.svg" },
+    { "key": 2, "image": "/assets/charts/chart2.svg" }
+  ]
+}

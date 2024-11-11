@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+
 import { useRouter, useSearchParams } from "next/navigation";
+
 import { Button, Result } from "antd";
 
 export default function ErrorPage(): JSX.Element {
@@ -9,13 +10,13 @@ export default function ErrorPage(): JSX.Element {
   const error = searchParams.get("error") || "403";
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <Result
         status="403"
         title="No Email found"
         subTitle={
           <p>
-            It looks like we couldn't find an email associated with your
+            It looks like we couldn&apos;t find an email associated with your
             account. Try to Register.
             <br />
           </p>

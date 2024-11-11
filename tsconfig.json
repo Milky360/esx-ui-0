@@ -12,16 +12,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".", // The root of your project
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@src/*": ["src/*"],
-      "@types/*": ["src/types/*"],
-    },
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

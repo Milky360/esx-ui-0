@@ -8,18 +8,38 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      boxShadow: {
-        "custom-bottom-right": "5px 5px 8px rgba(0, 0, 0, 0.15)",
-      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        btn_bg: "#F0F0F0",
-        signin_bg: "#FFFFFF",
-        link_btn: "#0045FF",
+        esxmain: "var(--esx-main-color)",
+        darker1: "var(--esx-darker1)",
+        darker2: "var(--esx-darker2)",
+        lighter: "var(--lighter)",
+        progresscolor: "var(--progress-color)",
+        bodybackground: "var(--body-background)",
+        bodybackground2: "var(--body-background2)",
+      },
+      maxWidth: {
+        contentwidth: "1200px", // width for content
+        bodywidth: "1400px", // width for body
+      },
+      maxHeight: {
+        navheight: "98px",
+      },
+      fontSize: {
+        navlink1: ["20px", { fontWeight: "700" }], // bold
+        navlink2: ["20px", { fontWeight: "400" }], // regular
+        herotitle: ["60px", { fontWeight: "700" }], // bold
+        herotitle2: ["40px", { fontWeight: "700" }], // bold
+        herodescription: ["16px", { fontWeight: "400" }], // regular
+        herodescription2: ["25px", { fontWeight: "400" }], // regular
+      },
+      leading: {
+        herolineheight: ["4.5rem"],
       },
     },
   },
   plugins: [],
 };
+
 export default config;

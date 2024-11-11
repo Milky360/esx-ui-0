@@ -1,14 +1,16 @@
 import { ReactNode } from "react";
+
 import {
   CheckCircleFilled,
   CloseCircleFilled,
   InfoCircleFilled,
 } from "@ant-design/icons";
-import { CustomIconProps } from "@src/types/ITypes";
+
+import { CustomIconProps } from "@/types/ITypes";
 
 export const GoogleIcon = (): ReactNode => {
   return (
-    <div className=" mr-2">
+    <div className="mr-2">
       <svg
         width="25"
         height="25"
@@ -50,7 +52,7 @@ export const GoogleIcon = (): ReactNode => {
 
 export const LinkedInIcon = (): ReactNode => {
   return (
-    <div className=" mr-2">
+    <div className="mr-2">
       <svg
         width="25"
         height="25"
@@ -84,7 +86,7 @@ export const LinkedInIcon = (): ReactNode => {
 
 export const OrIcon = (): ReactNode => {
   return (
-    <div className=" mr-2">
+    <div className="mr-2">
       <svg
         width="437"
         height="24"
@@ -135,5 +137,5 @@ export const CustomIcon: React.FC<CustomIconProps> = ({ type }) => {
 };
 
 export const closeIcon: React.ReactNode = (
-  <span className="text-white cursor-pointer text-[30px]">×</span>
+  <span className="cursor-pointer text-[30px] text-white">×</span>
 );

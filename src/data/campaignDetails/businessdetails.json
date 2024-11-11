@@ -1,0 +1,29 @@
+{
+  "businessAndCampaignDetails": {
+    "Trade Name": "Lersha Agri Digital",
+    "Campaign Id": "ESX#356758",
+    "Capital in ETB": 10000000.0,
+    "General Manager Name": "Tewodros Girma",
+    "Number of Shareholders": 3,
+    "Number of Employees": 50,
+    "Field of Business1": "AgriTech",
+    "Business Registration Number": "AB123456",
+    "Business Address": "123 Farmer's Road, Addis Ababa",
+    "Field of Business2": "A digital platform connecting smallholder farmers with agricultural inputs, market data, and financial services"
+  },
+  "businessInformationSummary": {
+    "Region": "Addis Ababa",
+    "Woreda": "Woreda 03",
+    "Zone/Sub City": "Yeka Subcity",
+    "Kebele": "12",
+    "House No": "456",
+    "Geolocation": "9.0349° N, 38.7636° E",
+    "Email": "info@lersha.com",
+    "Tel No": "+251-911-123456",
+    "Website": "https://www.lersha.com",
+    "Year/Date of Establishment": "Tewodros Girma",
+    "Renewal Date": "2024-05-30",
+    "TIN": "0012345678",
+    "VAT": "4567891234"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "investmentDetails": {
+    "amountRaised": "230,000 ETB",
+    "investors": 242,
+    "targetPercentage": "93%",
+    "projectName": "Invest in Feres Taxi",
+    "description": "It's free, quick and easy to sign up.",
+    "subscriptionButton": "Subscribe Now",
+    "daysLeft": 20,
+    "sharePrice": "20,000 br",
+    "minMaxInvestment": "20,000/1,000,000",
+    "shariaCompliant": "No",
+    "founders": "Daniel Surafel",
+    "womenOwned": "No"
+  }
+}
