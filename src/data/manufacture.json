@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Manufacture Chapa Financial Technologies S.C",
+    "description": "The leading online payment gateway that enables businesses in Ethiopia.",
+    "raised": "5.4M",
+    "target": "6.5M",
+    "type": "Income Generating",
+    "image": "/assets/campaign/camp2.svg",
+    "tags": ["Income Generating", "FinTech"],
+    "id": 1
+  },
+  {
+    "title": "Manufacture Gebeya Talent",
+    "description": "Unlocking Top Tech Talent for Africa's Digital Future",
+    "raised": "4.2M",
+    "target": "6.0M",
+    "type": "Income Generating",
+    "image": "/assets/campaign/camp3.svg",
+    "tags": ["Income Generating", "Education"],
+    "id": 2
+  },
+  {
+    "title": "Manufacture Link Up Addis",
+    "description": "Bridging Communities, Cultures, and Unique Experiences in Ethiopia",
+    "raised": "3.9M",
+    "target": "5.0M",
+    "type": "Income Generating",
+    "image": "/assets/campaign/camp4.svg",
+    "tags": ["Community", "Cultural"],
+    "id": 3
+  },
+  {
+    "title": "Manufacture Link Up Addis",
+    "description": "Bridging Communities, Cultures, and Unique Experiences in Ethiopia",
+    "raised": "3.9M",
+    "target": "5.0M",
+    "type": "Income Generating",
+    "image": "/assets/campaign/camp5.svg",
+    "tags": ["Community", "Cultural"],
+    "id": 4
+  },
+  {
+    "title": "Manufacture Link Up Addis",
+    "description": "Bridging Communities, Cultures, and Unique Experiences in Ethiopia",
+    "raised": "3.9M",
+    "target": "5.0M",
+    "type": "Income Generating",
+    "image": "/assets/campaign/camp6.svg",
+    "tags": ["Community", "Cultural"],
+    "id": 5
+  },
+  {
+    "title": "Manufacture Link Up Addis",
+    "description": "Bridging Communities, Cultures, and Unique Experiences in Ethiopia",
+    "raised": "3.9M",
+    "target": "5.0M",
+    "type": "Income Generating",
+    "image": "/assets/campaign/camp1.svg",
+    "tags": ["Community", "Cultural"],
+    "id": 6
+  }
+]

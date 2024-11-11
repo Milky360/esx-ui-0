@@ -1,0 +1,150 @@
+{
+  "navigation": [
+    { "key": 1, "label": "About Us", "href": "#aboutUs" },
+    { "key": 2, "label": "Vision & Strategy", "href": "#visionAndStrategy" },
+    {
+      "key": 3,
+      "label": "Strategy for Campaign",
+      "href": "#strategyForCampaign"
+    },
+    { "key": 4, "label": "Problem Statement", "href": "#problemStatement" },
+    { "key": 5, "label": "Solutions", "href": "#solutions" },
+    { "key": 6, "label": "Founders", "href": "#founders" },
+    { "key": 7, "label": "Customers", "href": "#customers" },
+    { "key": 8, "label": "Tractions", "href": "#tractions" },
+    { "key": 9, "label": "Services", "href": "#services" },
+    { "key": 10, "label": "How It Works", "href": "#howItWorks" },
+    { "key": 11, "label": "Business Model", "href": "#businessModel" }
+  ],
+  "about": {
+    "aboutUs": "At Lersha, we are transforming Ethiopia’s agriculture through cutting-edge technology and innovative solutions. Our mission is to empower farmers, agribusinesses, and rural communities by providing digital tools that boost productivity, improve market access, and promote sustainable farming practices. By combining local knowledge with modern technology, we aim to make farming more efficient and profitable, helping to drive the country’s economic growth and improve food security.",
+    "aboutImage": "/assets/campaign/details/about.svg"
+  },
+  "visionAndStrategy": {
+    "visionTitle": "The leading online payment gateway that enables businesses in Ethiopia.",
+    "visionDescription": "Lersha Agri Digital envisions a future where every farmer, regardless of location or resources, can access innovative, data-driven, and user-friendly digital tools to improve their productivity, profitability, and sustainability. Our platform aims to revolutionize agriculture by providing seamless access to agricultural inputs, expert knowledge, and financial services, enabling smallholder farmers to thrive in the modern agricultural landscape and contribute to global food security.",
+    "visionVideo": "/assets/campaign/details/vision.svg"
+  },
+  "strategyForCampaign": [
+    {
+      "key": 1,
+      "title": "Farmer-Centric Digital Platform",
+      "description": "Build an intuitive and scalable platform that addresses the diverse needs of farmers. This includes providing access to high-quality inputs (seeds, fertilizers, etc.), agricultural equipment, crop management advice, and real-time market information through a mobile-first approach."
+    },
+    {
+      "key": 2,
+      "title": "Data-Driven Decision Making",
+      "description": "Leverage big data, satellite imaging, and AI-driven insights to offer precision agriculture solutions. By integrating weather forecasts, soil data, and crop health monitoring, Lersha will provide farmers with actionable insights to optimize yield and minimize waste."
+    },
+    {
+      "key": 3,
+      "title": "Financial Inclusion",
+      "description": "Partner with microfinance institutions, banks, and fintech companies to offer affordable financial services such as crop insurance, savings accounts, and microloans tailored to the agricultural cycle. This helps farmers manage risk and invest in long-term sustainability."
+    },
+    {
+      "key": 4,
+      "title": "Supply Chain Optimization",
+      "description": "Digitize and streamline supply chains, connecting farmers directly to buyers and processors. By reducing intermediaries, Lersha will create transparent and fair market access, allowing farmers to secure better prices for their produce."
+    }
+  ],
+  "problemStatement": "Ethiopian agriculture faces significant challenges such as limited market access, inefficient farm management, lack of real-time data, and fragmented supply chains. Farmers struggle with low yields, price volatility, and limited resources to adopt better farming practices. These issues hinder the growth and potential of the agriculture sector, which is critical to the country’s economy and food security.",
+  "solutions": {
+    "solutionTitle": "At Lersha, we offer solutions to address these challenges by providing:",
+    "solutionsDetails": [
+      {
+        "key": 1,
+        "solution": "Digital Farm Management Tools: Simple, user-friendly platforms for farmers to manage crops, monitor weather, and optimize resources like water and fertilizer."
+      },
+      {
+        "key": 2,
+        "solution": "Market Access Platforms: Connecting farmers with buyers and suppliers, ensuring fair prices and greater market reach."
+      },
+      {
+        "key": 3,
+        "solution": "Real-Time Data and Analytics: Offering insights on weather conditions, soil health, and market trends, enabling farmers to make informed decisions."
+      },
+      {
+        "key": 4,
+        "solution": "Training & Capacity Building: Equipping farmers and agribusinesses with the skills needed to adopt modern, tech-driven farming practices."
+      }
+    ]
+  },
+  "founders": {
+    "foundersTitle": "The founders of Lersha Agri Digital are Tewodros Girma and Elias Haile, visionary entrepreneurs with a deep commitment to transforming agriculture through technology.",
+    "foundersList": [
+      {
+        "key": 1,
+        "founder": "Tewodros Girma brings a wealth of experience in agricultural economics and rural development, having worked extensively with smallholder farmers and agricultural cooperatives. His expertise in value chain optimization and farm management practices has been instrumental in shaping Lersha’s farmer-centric platform."
+      },
+      {
+        "key": 2,
+        "founder": "Elias Haile is a tech innovator with a strong background in software development and data analytics. With a passion for leveraging digital solutions to solve real-world problems, Elias has led the creation of Lersha’s AI-driven tools and precision agriculture features, making cutting-edge technology accessible to farmers at every level."
+      }
+    ],
+    "founderSummary": "Together, their combined experience in agriculture and technology forms the foundation of Lersha Agri Digital, driving its mission to empower smallholder farmers and enhance global food security.",
+    "foundersImage": "/assets/campaign/details/founder.svg"
+  },
+  "customers": "Our customers include smallholder farmers, cooperatives, agribusinesses, wholesalers, and agricultural suppliers. We also collaborate with government and non-governmental organizations working to improve agriculture in Ethiopia, as well as investors seeking to support growth in the sector.",
+  "tractions": "Lersha Agri Digital has already achieved significant traction, with over 10,000 smallholder farmers registered on the platform, benefiting from access to agricultural inputs, real-time market data, and financial services. Through strategic partnerships with financial institutions and NGOs, we’ve provided tailored loans and insurance to 2,500 farmers, while connecting 3,000 farmers directly to buyers, improving their market access and profitability. Our AI-driven precision agriculture tools have increased yields by 20% for early adopters, and our platform's geographical reach now spans 15 regions, with plans for further expansion. This early success demonstrates our growing impact and the scalability of our solutions.",
+  "services": [
+    {
+      "key": 1,
+      "title": "Digital Farm Management",
+      "description": "Tools to help farmers manage and monitor their farm operations effectively."
+    },
+    {
+      "key": 2,
+      "title": "Market Access & Trade Platforms",
+      "description": "Linking farmers with buyers to ensure a more efficient and profitable supply chain."
+    },
+    {
+      "key": 3,
+      "title": "Real-Time Data & Analytics",
+      "description": "Providing insights on weather conditions, soil health, and market trends."
+    },
+    {
+      "key": 4,
+      "title": "Training & Capacity Building",
+      "description": "Offering education and support to help farmers adopt the latest agricultural technology and practices."
+    }
+  ],
+  "howItWorks": [
+    {
+      "key": 1,
+      "title": "Registration & Onboarding",
+      "description": "Farmers and agribusinesses sign up on the Lersha platform via mobile or web. Our team provides onboarding support, ensuring users understand how to use the platform and get the most from its features."
+    },
+    {
+      "key": 2,
+      "title": "Data Collection & Farm Management",
+      "description": "Farmers input key data about their crops and farm activities. The platform then provides real-time management tools, offering insights on irrigation, pest control, and crop health to optimize farm operations."
+    },
+    {
+      "key": 3,
+      "title": "Market Connection",
+      "description": "Farmers can list their produce on our marketplace, connecting directly with buyers across Ethiopia. This reduces reliance on middlemen, ensuring farmers receive fair prices while buyers access quality agricultural products."
+    },
+    {
+      "key": 4,
+      "title": "Real-Time Insights",
+      "description": "The platform provides real-time analytics based on weather forecasts, soil conditions, and market trends, allowing farmers to make informed decisions on planting, harvesting, and selling."
+    },
+    {
+      "key": 5,
+      "title": "Support & Training",
+      "description": "We offer continuous support through hotlines, educational resources, and training sessions to ensure farmers and agribusinesses make the most of our platform."
+    }
+  ],
+  "businessModel": [
+    {
+      "key": 1,
+      "title1": "Platform-Based Model",
+      "description": "Addis Agri Tech startups can operate on a platform-based model, where they provide a digital marketplace that connects farmers with buyers, suppliers, and service providers. Revenue can be generated through transaction fees, where a small percentage is charged on every sale or purchase facilitated on the platform. Additionally, startups can offer premium subscription services for larger farms or agribusinesses, providing advanced features like detailed data analytics, crop management insights, and precision agriculture tools."
+    },
+    {
+      "key": 2,
+      "title1": "Service-Based Model",
+      "description": "Startups can also operate a service-based model, where they charge farmers for access to precision agriculture services, such as drone mapping, soil testing, or automated irrigation systems. In rural areas with low digital penetration, they can deploy agents to offer these services directly to farmers for a fee."
+    }
+  ]
+}

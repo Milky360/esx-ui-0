@@ -1,0 +1,22 @@
+{
+  "documents": [
+    {
+      "name": "Business License",
+      "preview": true,
+      "resourceLocation": "/assets/pdf/sample.pdf",
+      "size": "5.7 MB"
+    },
+    {
+      "name": "Business Registration",
+      "preview": true,
+      "resourceLocation": "/assets/pdf/sample.pdf",
+      "size": "4.0 MB"
+    },
+    {
+      "name": "Memorandum of Association",
+      "preview": false,
+      "resourceLocation": "/assets/pdf/sample.pdf",
+      "size": "6.5 MB"
+    }
+  ]
+}

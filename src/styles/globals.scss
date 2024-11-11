@@ -2,26 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
-  --background: #efeeee;
-  --foreground: #000000;
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-helveticaneue: "Helvetica Neue", sans-serif;
+  /* colors */
+  /* y8 */
+  --esx-main-color: #0045ff;
+  --esx-main-lighter: #325fd6;
+  /* y9 */
+  --esx-darker1: #103eba;
+  --esx-darker2: #103eba;
+
+  --lighter: #0045ff;
+
+  --progress-color: #16d758;
+
+  /* Body Background */
+  --body-background: #f8f9ff;
+  --body-background2: #f3f6ff;
+
+  /* Forms */
+  --form-name-color: #0045ff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-helveticaneue), sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Customs */
+
+/* Issuer form */
+
+.text-form-name {
+  color: var(--form-name-color);
+}
+
+.text-form-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 100px;
+}
+
+.registration-form-border {
+  border: 1px solid #e6e6e6;
 }
