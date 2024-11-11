@@ -1,12 +1,11 @@
-import React from "react";
-import { Button, Form, Input, Select, Checkbox, DatePicker } from "antd";
 import { InboxOutlined } from "@ant-design/icons";
+import { Button, Checkbox, DatePicker, Form, Input, Select } from "antd";
 import Dragger from "antd/es/upload/Dragger";
 
 const { Option } = Select;
 const { TextArea } = Input;
 
-type NonEthiopianInvestorFormDataType = {};
+type NonEthiopianInvestorFormDataType = { placeholder: string };
 
 export default function NonEthiopianInvestor() {
   const [form] = Form.useForm();

@@ -1,26 +1,27 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+
+import { InboxOutlined } from "@ant-design/icons";
+import { useMutation } from "@tanstack/react-query";
 import {
   Button,
   DatePicker,
   Form,
   Input,
   InputNumber,
+  Select,
   message,
   notification,
-  Select,
-  Upload,
 } from "antd";
-import { InboxOutlined, UploadOutlined } from "@ant-design/icons";
-import type { UploadFile } from "antd/es/upload/interface";
 import Dragger from "antd/es/upload/Dragger";
-import { useIssuerRegistrationStore } from "@/store/issuer-registration-form-store";
-import { useFormProgressStore } from "@/store/form-progress-store";
-import { useSearchParams } from "next/navigation";
+import type { UploadFile } from "antd/es/upload/interface";
 import dayjs from "dayjs";
-import { useMutation } from "@tanstack/react-query";
+
 import { update_issuer_basic_information } from "@/actions/issuers/action";
+import { useFormProgressStore } from "@/store/form-progress-store";
+import { useIssuerRegistrationStore } from "@/store/issuer-registration-form-store";
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -96,7 +97,7 @@ export default function ProfileSetup() {
   useEffect(() => {
     if (stage)
       updateFormProgressStoreField("currentMainStep", Number(stage) - 1);
-  }, [stage]);
+  }, [stage, updateFormProgressStoreField]);
 
   const [form] = Form.useForm();
 

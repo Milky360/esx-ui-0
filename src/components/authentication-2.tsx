@@ -1,5 +1,9 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+
 import { DownOutlined } from "@ant-design/icons";
 import {
   Button,
@@ -7,19 +11,15 @@ import {
   Divider,
   Dropdown,
   Form,
-  FormProps,
   Input,
   MenuProps,
   Modal,
   Space,
 } from "antd";
 import Title from "antd/es/typography/Title";
-import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { CustomIcon, GoogleIcon, LinkedInIcon, OrIcon } from "./icons";
-import LinkedIn from "next-auth/providers/linkedin";
 import { signIn } from "next-auth/react";
+
+import { GoogleIcon, LinkedInIcon } from "./icons";
 
 const items: MenuProps["items"] = [
   {
@@ -75,14 +75,14 @@ export default function Authentication() {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onFinish = async (formData: any) => {
-    console.log("🚀 ~ onFinish ~ formData:", formData);
-    const response = await signIn("cred-login", {}, formData);
+    await signIn("cred-login", {}, formData);
   };
 
   return (
     <Modal open={isOpen} onCancel={removeAuthQueryParam} footer={null}>
-      <div className="flex items-center justify-center gap-10 my-10">
+      <div className="my-10 flex items-center justify-center gap-10">
         <p>Don’t Have Account ?</p>
         <Dropdown menu={{ items }} trigger={["click"]}>
           <a onClick={(e) => e.preventDefault()}>
@@ -117,7 +117,7 @@ export default function Authentication() {
           ]}
           className="!mb-4"
         >
-          <Input className="w-full max-w-[475px] h-[48px] border border-gray-300 rounded" />
+          <Input className="h-[48px] w-full max-w-[475px] rounded border border-gray-300" />
         </Form.Item>
 
         <Form.Item
@@ -125,13 +125,13 @@ export default function Authentication() {
           name="password"
           rules={[{ required: true, message: "Please input your password!" }]}
         >
-          <Input.Password className="w-full max-w-[475px] h-[48px] border border-gray-300 rounded" />
+          <Input.Password className="h-[48px] w-full max-w-[475px] rounded border border-gray-300" />
         </Form.Item>
 
         <Form.Item name="remember" valuePropName="checked">
-          <div className="flex justify-between items-center w-full">
+          <div className="flex w-full items-center justify-between">
             <Checkbox className="ml-1 font-medium">Remember me</Checkbox>
-            <Link className="text-[#FF0000] hover:underline mr-[5%]" href={""}>
+            <Link className="mr-[5%] text-[#FF0000] hover:underline" href={""}>
               Forgot Password
             </Link>
           </div>
@@ -149,7 +149,7 @@ export default function Authentication() {
         </Form.Item>
       </Form>
       <Divider style={{ borderColor: "black" }}>or</Divider>
-      <Button size="large" className="w-full mb-3 py-3">
+      <Button size="large" className="mb-3 w-full py-3">
         <GoogleIcon />
         Continue with Google
       </Button>

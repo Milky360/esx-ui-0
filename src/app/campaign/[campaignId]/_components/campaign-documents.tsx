@@ -1,21 +1,12 @@
 import { FileOutlined } from "@ant-design/icons";
 
-type DocumentType = {
-  name: string;
-  preview: boolean;
-  resourceLocation: string;
-  size: string;
-};
+import data from "@/data/campaignDetails/documents.json";
 
-type Props = {
-  documents: DocumentType[];
-};
-
-export default function CampaignDocuments({ documents }: Props) {
-  return documents.length > 0 ? (
+export default function CampaignDocuments() {
+  return data.documents.length > 0 ? (
     <div className="w-[70%] space-y-4 rounded-lg p-6 shadow-sm">
       <h2 className="mb-4 text-2xl font-semibold">Campaign Documents</h2>
-      {documents.map(({ name, preview, resourceLocation, size }) => (
+      {data.documents.map(({ name, preview, resourceLocation, size }) => (
         <a
           key={name}
           href={resourceLocation}

@@ -1,18 +1,8 @@
-import React from "react";
-import {
-  Form,
-  Input,
-  Radio,
-  Button,
-  Select,
-  Checkbox,
-  DatePicker,
-  Table,
-} from "antd";
+import { Button, Checkbox, Form, Input, Select, Table } from "antd";
 
 const { Option } = Select;
 
-type InvestorPersonalPreferencesFormDataType = {};
+type InvestorPersonalPreferencesFormDataType = { placeholder: string };
 
 export default function InvestorPersonalPreferences() {
   const [form] = Form.useForm();

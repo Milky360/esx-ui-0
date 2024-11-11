@@ -1,8 +1,8 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import LinkedInProvider from "next-auth/providers/linkedin";
-import CredentialsProvider from "next-auth/providers/credentials";
-import { NextAuthOptions } from "next-auth";
+
 import { execute } from "@/utils/django";
 
 const authOptions: NextAuthOptions = {
@@ -27,9 +27,7 @@ const authOptions: NextAuthOptions = {
         // Your existing authorization logic remains unchanged
         const { email_or_phone, password } = req.query as any;
 
-        let response;
-
-        response = await execute("USER_LOGIN", {
+        const response = await execute("USER_LOGIN", {
           email_or_phone,
           password,
         });
@@ -125,4 +123,4 @@ const authOptions: NextAuthOptions = {
 
 export const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST, authOptions };
+export { authOptions, handler as GET, handler as POST };

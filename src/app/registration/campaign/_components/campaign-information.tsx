@@ -1,17 +1,18 @@
 "use client";
 
 import React from "react";
+
+import { InboxOutlined, UploadOutlined } from "@ant-design/icons";
 import {
   Button,
   Checkbox,
+  DatePicker,
   Form,
   Input,
   Select,
-  DatePicker,
   Upload,
   message,
 } from "antd";
-import { UploadOutlined, InboxOutlined } from "@ant-design/icons";
 
 const { Option } = Select;
 const { TextArea } = Input;

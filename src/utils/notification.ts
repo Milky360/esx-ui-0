@@ -1,6 +1,8 @@
-import { closeIcon } from "@/components/icons";
-import { notification } from "antd";
 import React from "react";
+
+import { notification } from "antd";
+
+import { closeIcon } from "@/components/icons";
 
 export const openNotification = (
   message: React.ReactNode,

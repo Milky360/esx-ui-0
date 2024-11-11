@@ -1,17 +1,18 @@
 "use client";
 
-import { ProgressSteps } from "@/components";
+import { useEffect, useState } from "react";
+
+import ProgressSteps from "@/components/progress-steps";
 import {
   RegistrationStepType,
   useFormProgressStore,
 } from "@/store/form-progress-store";
-import { useEffect, useState } from "react";
+
 import {
   CorporateInvestor,
   DiasporaInvestor,
   IndividualInvestor,
   InvestorPersonalInformation,
-  InvestorPersonalInformationFormDataType,
   InvestorsProfileSetup,
   NonEthiopianInvestor,
 } from "./_components";
@@ -75,87 +76,87 @@ const getInvestorRegistrationSteps = (
               },
             ]
           : investorType === "diaspora"
-          ? [
-              { title: "National ID", href: "national_id", completed: false },
-              { title: "Passport", href: "passport", completed: false },
-            ]
-          : investorType === "individual"
-          ? [
-              {
-                title: "Registration Form",
-                href: "registration_form",
-                completed: false,
-              },
-              {
-                title: "Identity Verification",
-                href: "identity_verification",
-                completed: false,
-              },
-              {
-                title: "Business Information",
-                href: "business_information",
-                completed: false,
-              },
-              {
-                title: "Business Location",
-                href: "business_location",
-                completed: false,
-              },
-              {
-                title: "Contact Information",
-                href: "contact_information",
-                completed: false,
-              },
-              {
-                title: "Registration Details",
-                href: "registration_details",
-                completed: false,
-              },
-              {
-                title: "File Attachments",
-                href: "file_attachments",
-                completed: false,
-              },
-            ]
-          : investorType === "nonethiopian"
-          ? [
-              {
-                title: "Registration Form",
-                href: "registration_form",
-                completed: false,
-              },
-              {
-                title: "Identity Verification",
-                href: "identity_verification",
-                completed: false,
-              },
-              {
-                title: "Business Information",
-                href: "business_information",
-                completed: false,
-              },
-              {
-                title: "Business Location",
-                href: "business_location",
-                completed: false,
-              },
-              {
-                title: "Contact Information",
-                href: "contact_information",
-                completed: false,
-              },
-              {
-                title: "Registration Details",
-                href: "registration_details",
-                completed: false,
-              },
-              {
-                title: "File Attachments",
-                href: "file_attachments",
-                completed: false,
-              },
-            ]
-          : [],
+            ? [
+                { title: "National ID", href: "national_id", completed: false },
+                { title: "Passport", href: "passport", completed: false },
+              ]
+            : investorType === "individual"
+              ? [
+                  {
+                    title: "Registration Form",
+                    href: "registration_form",
+                    completed: false,
+                  },
+                  {
+                    title: "Identity Verification",
+                    href: "identity_verification",
+                    completed: false,
+                  },
+                  {
+                    title: "Business Information",
+                    href: "business_information",
+                    completed: false,
+                  },
+                  {
+                    title: "Business Location",
+                    href: "business_location",
+                    completed: false,
+                  },
+                  {
+                    title: "Contact Information",
+                    href: "contact_information",
+                    completed: false,
+                  },
+                  {
+                    title: "Registration Details",
+                    href: "registration_details",
+                    completed: false,
+                  },
+                  {
+                    title: "File Attachments",
+                    href: "file_attachments",
+                    completed: false,
+                  },
+                ]
+              : investorType === "nonethiopian"
+                ? [
+                    {
+                      title: "Registration Form",
+                      href: "registration_form",
+                      completed: false,
+                    },
+                    {
+                      title: "Identity Verification",
+                      href: "identity_verification",
+                      completed: false,
+                    },
+                    {
+                      title: "Business Information",
+                      href: "business_information",
+                      completed: false,
+                    },
+                    {
+                      title: "Business Location",
+                      href: "business_location",
+                      completed: false,
+                    },
+                    {
+                      title: "Contact Information",
+                      href: "contact_information",
+                      completed: false,
+                    },
+                    {
+                      title: "Registration Details",
+                      href: "registration_details",
+                      completed: false,
+                    },
+                    {
+                      title: "File Attachments",
+                      href: "file_attachments",
+                      completed: false,
+                    },
+                  ]
+                : [],
       content:
         investorType === "corporate" ? (
           <CorporateInvestor />
@@ -188,8 +189,7 @@ const getInvestorRegistrationSteps = (
 };
 
 export default function InvestorRegistration() {
-  const [investorType, setInvestorType] =
-    useState<InvestorType>("nonethiopian");
+  const [investorType] = useState<InvestorType>("nonethiopian");
   const { steps, currentMainStep, updateFormProgressStoreField } =
     useFormProgressStore();
 
@@ -198,7 +198,7 @@ export default function InvestorRegistration() {
       "steps",
       getInvestorRegistrationSteps(investorType)
     );
-  }, [investorType]);
+  }, [investorType, updateFormProgressStoreField]);
 
   const handleInvestorType = () => {
     switch (investorType) {
@@ -219,6 +219,7 @@ export default function InvestorRegistration() {
       <h1 className="text-form-title">
         Application Form for{" "}
         <span className="text-form-name">
+          individual
           {`${handleInvestorType()} Investor Registration`}
         </span>
       </h1>

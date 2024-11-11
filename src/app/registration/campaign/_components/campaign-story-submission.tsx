@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { Form, Input, Button, Upload, Checkbox, message } from "antd";
+
 import { InboxOutlined } from "@ant-design/icons";
+import { Button, Checkbox, Form, Input, Upload, message } from "antd";
 import { UploadProps } from "antd/es/upload";
 
 const { TextArea } = Input;

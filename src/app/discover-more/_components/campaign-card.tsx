@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
-import { Card, Progress, Tag } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import React from "react";
+
+import { Card, Progress, Tag } from "antd";
 
 type CampaignDataType = {
   id: number;
@@ -106,9 +107,7 @@ export default function CampaignCard({
         description={description}
       />
       <div className="-mt-9">
-        {tags?.map((tag, index) => (
-          <Tag key={index}>{tag}</Tag>
-        ))}
+        {tags?.map((tag, index) => <Tag key={index}>{tag}</Tag>)}
       </div>
     </Card>
   );

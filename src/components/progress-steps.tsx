@@ -1,8 +1,9 @@
 "use client";
 
 import { Steps } from "antd";
-import { useFormProgressStore } from "@/store/form-progress-store";
 import { FaDotCircle, FaRegDotCircle } from "react-icons/fa";
+
+import { useFormProgressStore } from "@/store/form-progress-store";
 
 export default function ProgressSteps() {
   const {
@@ -57,8 +58,8 @@ export default function ProgressSteps() {
         status: completed
           ? "finish"
           : currentMainStep === index
-          ? "process"
-          : "wait",
+            ? "process"
+            : "wait",
         description:
           currentMainStep === index ? (
             <Steps
@@ -73,11 +74,11 @@ export default function ProgressSteps() {
                     ? completed
                       ? "finish"
                       : steps[currentMainStep].subSteps[index].title === title
-                      ? "process"
-                      : "wait"
+                        ? "process"
+                        : "wait"
                     : completed
-                    ? "finish"
-                    : "wait",
+                      ? "finish"
+                      : "wait",
                 className: "!h-8 !pl-1",
                 onClick: () => {
                   onSubStepChange(index);

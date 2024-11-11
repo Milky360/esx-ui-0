@@ -1,9 +1,10 @@
 "use client";
-import { CustomButtonProps } from "@/types/ITypes";
-import { Button } from "antd";
-import React from "react";
 
-export const CustomButton = ({
+import { Button } from "antd";
+
+import { CustomButtonProps } from "@/types/ITypes";
+
+export default function CustomButton({
   text,
   onClick,
   color = "!bg-white",
@@ -12,7 +13,7 @@ export const CustomButton = ({
   type = "primary",
   icon,
   htmlType = "button",
-}: CustomButtonProps) => {
+}: CustomButtonProps) {
   // Determine the text color and border color based on the background color
   const isDefaultColor = color === "!bg-white";
   const textColorClass = isDefaultColor ? "text-black" : "!text-white"; // Text color
@@ -24,7 +25,7 @@ export const CustomButton = ({
   return (
     <Button
       type={type}
-      className={`apply-btn ${color} ${textColorClass} ${borderColorClass} ${borderWidthClass} ${width} ${height} mt-[20px] mr-1 mb-2 rounded-[7px] !text-[16px] !font-bold`}
+      className={`apply-btn ${color} ${textColorClass} ${borderColorClass} ${borderWidthClass} ${width} ${height} mb-2 mr-1 mt-[20px] rounded-[7px] !text-[16px] !font-bold`}
       onClick={onClick}
       style={{ borderColor: isDefaultColor ? undefined : color }} // Custom border color if not default
       icon={icon}
@@ -33,4 +34,4 @@ export const CustomButton = ({
       {text}
     </Button>
   );
-};
+}

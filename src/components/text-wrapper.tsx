@@ -1,5 +1,6 @@
-import { TextWrapperProps } from "@src/types/ITypes";
 import React from "react";
+
+import { TextWrapperProps } from "@/types/ITypes";
 
 const TextWrapper: React.FC<TextWrapperProps> = ({
   text,
@@ -9,8 +10,8 @@ const TextWrapper: React.FC<TextWrapperProps> = ({
     <span
       className={` ${
         isHeader
-          ? "text-white text-[18px] font-bold"
-          : "text-[#C8C5C5] text-[14px]"
+          ? "text-[18px] font-bold text-white"
+          : "text-[14px] text-[#C8C5C5]"
       }`}
     >
       {text}

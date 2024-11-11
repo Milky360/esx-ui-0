@@ -1,9 +1,9 @@
 "use client";
 
-import { Tabs } from "antd";
 import React, { useState } from "react";
 
-// Import JSON data for each category
+import { Tabs } from "antd";
+
 import agriculture from "@/data/bulk/agriculture.json";
 import art from "@/data/bulk/art.json";
 import construction from "@/data/bulk/construction.json";
@@ -12,6 +12,7 @@ import health from "@/data/bulk/health.json";
 import manufacture from "@/data/bulk/manufacture.json";
 import services from "@/data/bulk/services.json";
 import technology from "@/data/bulk/technology.json";
+
 import CampaignCardContainer from "./campaign-card-container";
 
 // Define all the categories in one array

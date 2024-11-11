@@ -1,8 +1,9 @@
 "use client";
 
-import { Button, Form, Input, Select, Checkbox, Upload, message } from "antd";
-import { UploadOutlined, InboxOutlined } from "@ant-design/icons";
 import React from "react";
+
+import { InboxOutlined, UploadOutlined } from "@ant-design/icons";
+import { Button, Checkbox, Form, Input, Select, Upload, message } from "antd";
 
 const { Option } = Select;
 const { Dragger } = Upload;

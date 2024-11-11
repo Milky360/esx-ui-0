@@ -1,8 +1,7 @@
-import React from "react";
 import { Button, Form, Input } from "antd";
 import { AiFillCheckCircle } from "react-icons/ai";
 
-type VerificationsFormDataType = {};
+type VerificationsFormDataType = { placeholder: string };
 
 export default function Verifications() {
   const handleSubmit = (values: VerificationsFormDataType) => {};

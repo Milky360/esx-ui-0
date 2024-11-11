@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { Form, Input, Radio, Upload, Button, Select, Checkbox } from "antd";
+import { useState } from "react";
+
 import { InboxOutlined } from "@ant-design/icons";
+import { Button, Checkbox, Form, Input, Radio, Select, Upload } from "antd";
 
 const { Option } = Select;
 const { Dragger } = Upload;
 
-type InvestorsProfileSetupFormDataType = {};
+type InvestorsProfileSetupFormDataType = { placeholder: string };
 
 export default function InvestorsProfileSetup() {
   const [isLicensed, setIsLicensed] = useState(false);

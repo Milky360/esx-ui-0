@@ -1,10 +1,9 @@
-import React from "react";
-import { Form, Button, Upload, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import { Button, Form, Upload, message } from "antd";
 
 const { Dragger } = Upload;
 
-type DiasporaInvestorFormDataType = {};
+type DiasporaInvestorFormDataType = { placeholder: string };
 
 export default function DiasporaInvestor() {
   // Handle file upload validation

@@ -1,23 +1,14 @@
 "use client";
 
 import { InboxOutlined } from "@ant-design/icons";
-import {
-  Button,
-  Checkbox,
-  DatePicker,
-  Form,
-  Input,
-  message,
-  Select,
-} from "antd";
+import { Button, Checkbox, Form, Input, Select, message } from "antd";
 import Dragger from "antd/es/upload/Dragger";
 import type { UploadFile } from "antd/es/upload/interface";
-import React from "react";
 
 const { Option } = Select;
 const { TextArea } = Input;
 
-type CorporateInvestorFormDataType = {};
+type CorporateInvestorFormDataType = { placeholder: string };
 
 export default function CorporateInvestor() {
   const [form] = Form.useForm();

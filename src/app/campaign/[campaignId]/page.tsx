@@ -1,7 +1,8 @@
-import CampaignSubscribeCard from "@/components/CampaignSubscribeCard";
 import Image from "next/image";
-import React from "react";
+
+import CampaignSubscribeCard from "@/components/campaign-subscribe-card";
 import data from "@/data/campaignSubscription.json";
+
 import { CampaignDetailTabs } from "./_components";
 
 export default function CampaignPage() {

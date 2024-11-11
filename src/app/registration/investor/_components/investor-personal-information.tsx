@@ -1,7 +1,8 @@
 "use client";
 
-import { Button, Form, Input, Select, Checkbox } from "antd";
 import React, { useState } from "react";
+
+import { Button, Checkbox, Form, Input, Select } from "antd";
 
 interface InvestorPersonalInformationFormDataType {
   currentFormCounter: number;

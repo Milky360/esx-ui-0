@@ -1,7 +1,7 @@
 "use server";
 
-import axiosInstance from "../axiosInstance";
-import getErrorMessage from "../getErrorMessage";
+import axiosInstance from "../axios-instance";
+import getErrorMessage from "../get-error-message";
 
 export async function verify_email(payload: string) {
   try {

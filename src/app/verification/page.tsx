@@ -1,10 +1,12 @@
 "use client";
 
-import { verify_email } from "@/actions/auth/action";
-import { useMutation } from "@tanstack/react-query";
-import { notification } from "antd";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
+
+import { useMutation } from "@tanstack/react-query";
+import { notification } from "antd";
+
+import { verify_email } from "@/actions/auth/action";
 
 export default function Verification() {
   const searchParams = useSearchParams();
@@ -41,7 +43,7 @@ export default function Verification() {
   }, [token]);
 
   return (
-    <div className="absolute inset-0 bg-white z-50 overflow-hidden flex items-center justify-center">
+    <div className="absolute inset-0 z-50 flex items-center justify-center overflow-hidden bg-white">
       {contextHolder}
       Verifying Your Email
     </div>

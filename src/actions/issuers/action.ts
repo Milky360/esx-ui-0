@@ -4,8 +4,9 @@ import {
   BasicInformationFormType,
   ProfileSetupFormType,
 } from "@/types/issuer-type";
-import axiosInstance from "../axiosInstance";
-import getErrorMessage from "../getErrorMessage";
+
+import axiosInstance from "../axios-instance";
+import getErrorMessage from "../get-error-message";
 
 export async function create_issuer_basic_information(
   payload: BasicInformationFormType

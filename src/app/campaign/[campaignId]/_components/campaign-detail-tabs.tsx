@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
+
 import { Tabs } from "antd";
 
-import CampaignOverView from "./campaign-overview";
 import CampaignBusinessDetails from "./campaign-business-details";
-import CampaignDocuments from "./CampaignDocuments";
 import CampaignCharts from "./campaign-charts";
-import CampaignContact from "./CampaignContact";
+import CampaignContact from "./campaign-contact";
+import CampaignDocuments from "./campaign-documents";
+import CampaignOverView from "./campaign-overview";
 
 // Define all the categories in one array
 const tabCategories = [

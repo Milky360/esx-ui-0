@@ -1,11 +1,13 @@
 "use client";
 
-import { ProgressSteps } from "@/components";
+import { useEffect } from "react";
+
+import ProgressSteps from "@/components/progress-steps";
 import {
   RegistrationStepType,
   useFormProgressStore,
 } from "@/store/form-progress-store";
-import { useEffect } from "react";
+
 import {
   BasicInformation,
   BusinessPlanStrategy,

@@ -1,8 +1,10 @@
 // CampaignCardContainer.tsx
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
 import { Pagination } from "antd";
-import SearchInput from "./search-input";
+
 import CampaignCard from "./campaign-card";
+import SearchInput from "./search-input";
 
 interface CampaignData {
   id: number;

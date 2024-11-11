@@ -1,10 +1,11 @@
 import Image from "next/image";
+
 import data from "@/data/campaignDetails/charts.json";
 
 export default function CampaignCharts() {
   return (
     <div className="mt-10 w-[65%]">
-      <div className="m-auto mb-6 flex w-[50%] justify-center bg-white p-3 rounded-lg">
+      <div className="m-auto mb-6 flex w-[50%] justify-center rounded-lg bg-white p-3">
         <h2 className="text-lg font-medium">
           Investment Highlights and Charts
         </h2>

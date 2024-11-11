@@ -1,19 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSession, signOut, getCsrfToken } from "next-auth/react";
-import clsx from "clsx";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Avatar, Badge } from "antd";
-import { UserOutlined } from "@ant-design/icons";
-import Authentication from "./authentication";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+
+import { getCsrfToken, useSession } from "next-auth/react";
+
+import Authentication from "./authentication-2";
 
 const parseCookie = (str: string) =>
   str.length > 0
     ? str
         .split(";")
         .map((v) => v.split("="))
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .reduce((acc: any, v) => {
           acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(
             v[1].trim()
@@ -52,14 +52,10 @@ export default function GlobalHeader({
   no_absolute = false,
   hide_authentication = false,
 }) {
-  const router = useRouter();
   const searchParams = useSearchParams();
-  const [menuOpened, setMenuOpened] = useState(false);
   const [dialog, setDialog] = useState<string | null>("none");
   const [csrfToken, setCsrf] = useState<string | null>(null);
   const { data: session, status } = useSession();
-  // const [is_loading, p_photo] = useProfilePhoto();
-  const pathname = usePathname();
 
   console.log("session data ---->", session, status);
 
@@ -96,18 +92,18 @@ export default function GlobalHeader({
   }, [dialog]);
 
   return (
-    <header className="h-[98px] shadow-md fixed z-40 bg-white left-0 right-0">
-      <nav className="flex items-center h-full pr-10">
+    <header className="fixed left-0 right-0 z-40 h-[98px] bg-white shadow-md">
+      <nav className="flex h-full items-center pr-10">
         <Link href="/">
           <img src="/esx_logo.svg" alt="Logo" className="h-[78px]" />
         </Link>
 
         {/* Right Section - Auth Buttons or User Profile */}
-        <div className="flex items-center gap-6 ml-auto">
-          <Link href={`/registration/issuer?stage=1`} className="text-xl">
+        <div className="ml-auto flex items-center gap-6">
+          <Link href={"/registration/issuer?stage=1"} className="text-xl">
             Sign Up
           </Link>
-          <Link href={`?auth=signin`} className="text-xl">
+          <Link href={"?auth=signin"} className="text-xl">
             Login
           </Link>
         </div>

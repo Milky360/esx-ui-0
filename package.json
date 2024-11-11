@@ -2,11 +2,20 @@
   "name": "ESX-CIP-Frontend",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=v20.14.0",
+    "yarn": ">=1.22",
+    "npm": "🚫 Please use yarn instead of npm to install dependencies. 🚫"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier src/ package.json --write",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "test-all": "yarn run check-types && yarn run check-format && yarn run lint"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.21.1",
@@ -29,11 +38,19 @@
     "zustand": "^5.0.1"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-check-file": "^2.8.0",
+    "eslint-plugin-n": "^17.11.1",
     "postcss": "^8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

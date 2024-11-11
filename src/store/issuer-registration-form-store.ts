@@ -1,8 +1,9 @@
+import { create } from "zustand";
+
 import {
   BasicInformationFormType,
   ProfileSetupFormType,
 } from "@/types/issuer-type";
-import { create } from "zustand";
 
 const stage_1_initial_data: BasicInformationFormType = {
   business_name: "",

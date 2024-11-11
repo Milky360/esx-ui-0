@@ -1,19 +1,25 @@
 "use client";
-import Link from "next/link";
-import React, { useRef, useState } from "react";
-import { CustomButton } from "./CustomButton";
-import { CustomIcon, GoogleIcon, LinkedInIcon, OrIcon } from "./icons";
-import type { FormProps, MenuProps } from "antd";
-import { Checkbox, Form, Input, Dropdown, Menu, Space, Modal } from "antd";
-import { DownOutlined } from "@ant-design/icons";
-import { openNotification } from "@/utils/notification";
-import TextWrapper from "@/components/TextWrapper";
-import { signIn } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { ComponentProps, FieldType } from "@/types/IUser";
 
-const Authentication: React.FC<ComponentProps> = ({ close, token }) => {
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useRef, useState } from "react";
+
+import { DownOutlined } from "@ant-design/icons";
+import type { FormProps, MenuProps } from "antd";
+import { Checkbox, Dropdown, Form, Input, Space } from "antd";
+import { signIn } from "next-auth/react";
+
+import TextWrapper from "@/components/text-wrapper";
+import { ComponentProps, FieldType } from "@/types/IUser";
+import { openNotification } from "@/utils/notification";
+
+import CustomButton from "./custom-button";
+import { CustomIcon, GoogleIcon, LinkedInIcon, OrIcon } from "./icons";
+
+export default function Authentication({ close }: ComponentProps) {
   const router = useRouter();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const formRef: any = useRef();
   const searchParams = useSearchParams();
   const [open, setOpen] = useState(false);
@@ -78,12 +84,13 @@ const Authentication: React.FC<ComponentProps> = ({ close, token }) => {
     console.log("Failed:", errorInfo);
   };
   return (
-    <div className=" relative grid items-center justify-items-center min-h-screen z-30 bg-black bg-opacity-70">
-      <div className="flex flex-col w-[584px] h-[842px] min-h-[400px] bg-signin_bg shadow-custom-bottom-right py-[1%]">
-        <div className="flex justify-end mb-[3%] mr-[3%]">
-          <img
-            className="w-5 h-4 cursor-pointer hover:opacity-80"
+    <div className="relative z-30 grid min-h-screen items-center justify-items-center bg-black bg-opacity-70">
+      <div className="bg-signin_bg shadow-custom-bottom-right flex h-[842px] min-h-[400px] w-[584px] flex-col py-[1%]">
+        <div className="mb-[3%] mr-[3%] flex justify-end">
+          <Image
             src="/close_icon.svg"
+            alt=""
+            className="h-4 w-5 cursor-pointer hover:opacity-80"
             onClick={removeAuthQueryParam}
           />
         </div>
@@ -98,15 +105,15 @@ const Authentication: React.FC<ComponentProps> = ({ close, token }) => {
               <Space className="text-link_btn ml-[44px] cursor-pointer">
                 Register
               </Space>
-              <DownOutlined className=" font-bold ml-2" />
+              <DownOutlined className="ml-2 font-bold" />
             </a>
           </Dropdown>
 
-          <p>Don't have an Account?</p>
+          <p>{"Don't have an Account?"}</p>
         </div>
 
-        <div className="flex flex-col mt-[64px] items-center">
-          <p className="text-[24px] font-bold text-center">
+        <div className="mt-[64px] flex flex-col items-center">
+          <p className="text-center text-[24px] font-bold">
             Login Into Your Account
           </p>
 
@@ -132,7 +139,7 @@ const Authentication: React.FC<ComponentProps> = ({ close, token }) => {
               ]}
               className="!mb-4"
             >
-              <Input className="w-full max-w-[475px] h-[48px] border border-gray-300 rounded" />
+              <Input className="h-[48px] w-full max-w-[475px] rounded border border-gray-300" />
             </Form.Item>
 
             <Form.Item
@@ -143,14 +150,14 @@ const Authentication: React.FC<ComponentProps> = ({ close, token }) => {
               ]}
               className="!mb-4"
             >
-              <Input.Password className="w-full max-w-[475px] h-[48px] border border-gray-300 rounded" />
+              <Input.Password className="h-[48px] w-full max-w-[475px] rounded border border-gray-300" />
             </Form.Item>
 
             <Form.Item name="remember" valuePropName="checked">
-              <div className="flex justify-between items-center w-full">
+              <div className="flex w-full items-center justify-between">
                 <Checkbox className="ml-1 font-medium">Remember me</Checkbox>
                 <Link
-                  className="text-[#FF0000] hover:underline mr-[5%]"
+                  className="mr-[5%] text-[#FF0000] hover:underline"
                   href={""}
                 >
                   Forgot Password
@@ -189,6 +196,4 @@ const Authentication: React.FC<ComponentProps> = ({ close, token }) => {
       </div>
     </div>
   );
-};
-
-export default Authentication;
+}
