@@ -11,7 +11,7 @@ export default function CampaignPage() {
 
   return (
     <div className="relative m-auto mb-80 mt-12 max-w-contentwidth">
-      <div className="text-secondary mb-5 flex flex-col gap-4 pl-24 text-sm">
+      <div className="text-secondary mb-5 flex flex-col gap-4  text-sm">
         <div className="flex">
           <Image
             src="/assets/campaign/verified.svg"

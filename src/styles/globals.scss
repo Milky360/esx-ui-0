@@ -1,7 +1,9 @@
+/* Tailwind Base */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Global Reset */
 *,
 *::after,
 *::before {
@@ -9,23 +11,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Root Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --font-helveticaneue: "Helvetica Neue", sans-serif;
-  /* colors */
-  /* y8 */
+
+  /* Primary Colors */
   --esx-main-color: #0045ff;
   --esx-main-lighter: #325fd6;
-  /* y9 */
   --esx-darker1: #103eba;
   --esx-darker2: #103eba;
-
   --lighter: #0045ff;
 
+  /* Accent Colors */
   --progress-color: #16d758;
 
-  /* Body Background */
+  /* Background Colors */
   --body-background: #f8f9ff;
   --body-background2: #f3f6ff;
 
@@ -33,29 +36,33 @@
   --form-name-color: #0045ff;
 }
 
+/* Dark Mode Adjustments */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* --background: #0a0a0a;
-    --foreground: #ededed; */
+    /* Uncomment if needed:
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    */
   }
 }
 
+/* Base Styles */
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-helveticaneue), sans-serif;
 }
 
+/* Tailwind Custom Utilities */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
-/* Customs */
+/* Custom Components */
 
-/* Issuer form */
-
+/* Forms */
 .text-form-name {
   color: var(--form-name-color);
 }
@@ -68,4 +75,77 @@ body {
 
 .registration-form-border {
   border: 1px solid #e6e6e6;
+}
+
+/* Campaign Cards */
+.campaignCard {
+  background: #fff;
+  height: 427px;
+  width: 352px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.campaignCardProgress {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 5px 21px;
+  position: relative;
+  top: -47px;
+}
+
+.campaignCardRaised,
+.campaignCardTarget {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.campaignCardInfoContainer {
+  padding: 0 10px;
+  position: relative;
+  top: -30px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  height: 95px;
+}
+
+.campaignCardTitle,
+.campaignCardDescription {
+  margin-bottom: 12px;
+}
+
+.campaignCardTitle {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.campaignCardDescription {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.campaignCardBody,
+.campaignCardFooter {
+  width: 304px;
+  background-color: #ffffff;
+  margin: auto;
+}
+
+.campaignCardBody {
+  height: 78px;
+}
+
+.campaignCardFooter {
+  position: absolute;
+  bottom: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.birrLable {
+  font-size: 10px;
+  font-weight: 500;
 }

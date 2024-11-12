@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Anchor } from "antd";
 
@@ -69,27 +69,27 @@ export default function CampaignOverView() {
     const sections = [
       { id: "#about", ref: document.getElementById("about") },
       {
-        id: "#vision-and-strategy",
-        ref: document.getElementById("vision-and-strategy"),
+        id: "#visionandStrategy",
+        ref: document.getElementById("visionandStrategy"),
       },
       {
-        id: "#strategy-for-campaign",
-        ref: document.getElementById("strategy-for-campaign"),
+        id: "#strategyforCampaign",
+        ref: document.getElementById("strategyforCampaign"),
       },
       {
-        id: "#problem-statement",
-        ref: document.getElementById("problem-statement"),
+        id: "#problemStatement",
+        ref: document.getElementById("problemStatement"),
       },
       { id: "#solutions", ref: document.getElementById("solutions") },
       { id: "#founders", ref: document.getElementById("founders") },
       { id: "#customers", ref: document.getElementById("customers") },
       { id: "#tractions", ref: document.getElementById("tractions") },
       { id: "#services", ref: document.getElementById("services") },
-      { id: "#how-it-works", ref: document.getElementById("how-it-works") },
-      { id: "#business-model", ref: document.getElementById("business-model") },
-    ].filter((section) => section.ref); // Only keep sections that are found
+      { id: "#howItWorks", ref: document.getElementById("howItWorks") },
+      { id: "#businessModel", ref: document.getElementById("businessModel") },
+    ].filter((section) => section.ref);
 
-    const scrollPosition = window.scrollY + 100; // Adjust this value as needed for your layout
+    const scrollPosition = window.scrollY + 100;
 
     for (let i = 0; i < sections.length; i++) {
       const section = sections[i];
@@ -126,47 +126,81 @@ export default function CampaignOverView() {
   }, []);
 
   return (
-    <div className="flex w-[73%]">
+    <div className="flex w-[65%]">
       {/* Anchor Navigation */}
-      <div className="sticky top-0 h-screen overflow-y-auto p-4">
+      <div className="sticky top-0 h-screen overflow-y-auto pr-10">
         <Anchor
-          getContainer={() => containerRef.current || window}
-          affix={false}
-          // activeLink={activeLink}
-          onClick={(e) => {
-            e.preventDefault();
-            const href = (e.target as HTMLAnchorElement).getAttribute("href");
-            if (href) handleAnchorClick(href);
-          }}
-        >
-          <Link href="#about" title="About" />
-          <Link href="#vision-and-strategy" title="Vision and Strategy" />
-          <Link href="#strategy-for-campaign" title="Strategy for Campaign" />
-          <Link href="#problem-statement" title="Problem Statement" />
-          <Link href="#solutions" title="Solutions" />
-          <Link href="#founders" title="Founders" />
-          <Link href="#customers" title="Customers" />
-          <Link href="#tractions" title="Tractions" />
-          <Link href="#services" title="Services" />
-          <Link href="#how-it-works" title="How It Works" />
-          <Link href="#business-model" title="Business Model" />
-        </Anchor>
+          items={[
+            {
+              key: "about",
+              href: "#about",
+              title: "About",
+            },
+            {
+              key: "visionandStrategy",
+              href: "#visionandStrategy",
+              title: "Vision and Strategy",
+            },
+            {
+              key: "strategyforCampaign",
+              href: "#strategyforCampaign",
+              title: "Strategy for Campaign",
+            },
+            {
+              key: "problemStatement",
+              href: "#problemStatement",
+              title: "Problem Statement",
+            },
+            {
+              key: "solutions",
+              href: "#solutions",
+              title: "Solutions",
+            },
+            {
+              key: "founders",
+              href: "#founders",
+              title: "Founders",
+            },
+            {
+              key: "customers",
+              href: "#customers",
+              title: "Customers",
+            },
+            {
+              key: "tractions",
+              href: "#tractions",
+              title: "Tractions",
+            },
+            {
+              key: "services",
+              href: "#services",
+              title: "Services",
+            },
+            {
+              key: "howItWorks",
+              href: "#howItWorks",
+              title: "How It Works",
+            },
+            {
+              key: "businessModel",
+              href: "#businessModel",
+              title: "Business Model",
+            },
+          ]}
+        />
       </div>
 
       {/* Content Section */}
       <div className="w-3/4 p-4" ref={containerRef}>
-        {/* about */}
-
+        {/* About */}
         <div id="about" className="mb-5 flex flex-col gap-3">
           <Image
             src={resolvedData.about.aboutImage}
             alt="campHero"
             width={200}
             height={200}
-            priority
             className="h-full w-full object-cover"
           />
-          {/* <h2 id="about" className="text-2xl font-bold"> */}
           <h2 className="text-2xl font-bold">About</h2>
           <p className="text-justify text-base font-normal">
             {resolvedData.about.aboutUs}
@@ -174,14 +208,12 @@ export default function CampaignOverView() {
         </div>
 
         {/* Vision */}
-        <div id="vision-and-strategy" className="mb-5 flex flex-col gap-3">
-          {/* <h2 id="vision-and-strategy" className="mt-4 text-2xl font-bold"> */}
+        <div id="visionandStrategy" className="mb-5 flex flex-col gap-3">
           <Image
             src={resolvedData.visionAndStrategy.visionVideo}
             alt="campHero"
             width={200}
             height={200}
-            priority
             className="h-full w-full object-cover"
           />
           <h2 className="text-2xl font-bold">Vision and Strategy</h2>
@@ -194,7 +226,7 @@ export default function CampaignOverView() {
         </div>
 
         {/* Strategy for Campaign */}
-        <div id="strategy-for-campaign" className="mb-5 flex flex-col gap-3">
+        <div id="strategyforCampaign" className="mb-5 flex flex-col gap-3">
           <h2 className="text-base font-bold">Strategy for Campaign</h2>
           <ol className="list-decimal pl-5">
             {resolvedData.strategyForCampaign.map((strategy) => (
@@ -209,7 +241,7 @@ export default function CampaignOverView() {
         </div>
 
         {/* Problem */}
-        <div id="problem-statement" className="mb-5 flex flex-col gap-3">
+        <div id="problemStatement" className="mb-5 flex flex-col gap-3">
           <h2 className="text-2xl font-bold">Problem Statement</h2>
           <p className="text-justify text-base font-normal">
             {resolvedData.problemStatement}
@@ -234,14 +266,13 @@ export default function CampaignOverView() {
           </ul>
         </div>
 
-        {/* Founder */}
+        {/* Founders */}
         <div id="founders" className="mb-5 flex flex-col gap-3">
           <Image
             src={resolvedData.founders.foundersImage}
             alt="campHero"
             width={648}
             height={440}
-            priority
             className="h-full w-full object-cover"
           />
           <h2 className="text-2xl font-bold">Founders</h2>
@@ -263,7 +294,7 @@ export default function CampaignOverView() {
           </p>
         </div>
 
-        {/* Customer */}
+        {/* Customers */}
         <div id="customers" className="mb-5 flex flex-col gap-3">
           <h2 className="text-2xl font-bold">Customers</h2>
           <p className="text-justify text-base font-normal">
@@ -272,7 +303,6 @@ export default function CampaignOverView() {
         </div>
 
         {/* Tractions */}
-
         <div id="tractions" className="mb-5 flex flex-col gap-3">
           <h2 className="text-2xl font-bold">Tractions</h2>
           <p className="text-justify text-base font-normal">
@@ -301,8 +331,8 @@ export default function CampaignOverView() {
           </ol>
         </div>
 
-        {/* How it Work */}
-        <div id="how-it-works" className="mb-5 flex flex-col gap-3">
+        {/* How It Works */}
+        <div id="howItWorks" className="mb-5 flex flex-col gap-3">
           <h2 className="text-2xl font-bold">How It Works</h2>
           <ul className="list-disc pl-5">
             {resolvedData.howItWorks.map((item) => (
@@ -314,8 +344,8 @@ export default function CampaignOverView() {
           </ul>
         </div>
 
-        {/* Business Model   */}
-        <div id="business-model" className="mb-5 flex flex-col gap-3">
+        {/* Business Model */}
+        <div id="businessModel" className="mb-5 flex flex-col gap-3">
           <h2 className="text-2xl font-bold">Business Model</h2>
           {resolvedData.businessModel.map((model) => (
             <div key={model.key} className="text-justify text-base font-normal">
