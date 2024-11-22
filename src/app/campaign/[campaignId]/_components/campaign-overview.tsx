@@ -9,7 +9,7 @@ const { Link } = Anchor;
 
 type CampaignOverViewType = {
   about: { aboutUs: string; aboutImage: string };
-  visionAndStrategy: {
+visionAndStrategy: {
     visionTitle: string;
     visionDescription: string;
     visionVideo: string;
@@ -37,7 +37,156 @@ type CampaignOverViewType = {
   businessModel: Array<{ key: number; title1: string; description: string }>;
 };
 
-export default function CampaignOverView() {
+interface CampaignDatas {
+  id: number;
+  name: string;
+  caption: string;
+  sector: string;
+  target_raise: string;
+  raised_funds: string;
+  progress: string;
+  deadline: string;
+  campaign_status: string;
+  cover_image: string;
+  logo: string | null;
+  video_url: string;
+  min_investment: string;
+  max_investment: string;
+  is_verified: boolean;
+  sharia_compliance: boolean;
+  women_owned_led_status: boolean;
+  number_of_investors: number;
+  business_info: {
+    id: number;
+    business_overview: string;
+    principal_activities: string;
+    principal_market: string;
+    auditor: string;
+  };
+  project: {
+    id: number;
+    project_name: string;
+    objectives: string;
+    summary: string;
+    about_the_project: string;
+    problem_being_addressed: string;
+    solution_offered: string;
+    how_it_works: string;
+    product_service_details: string;
+    traction: string;
+    customers: string;
+    business_model: string;
+    vision_and_strategy: string;
+    funding_requirements: string;
+  };
+  financial_info: {
+    id: number;
+    bank_account: string;
+    total_assets: string;
+    total_liabilities: string;
+    revenue: string;
+    net_profit: string;
+  };
+  contact: {
+    id: number;
+    name: string;
+    phone_number: string;
+    email: string;
+    title: string;
+    telegram: string | null;
+    whatsapp: string | null;
+    facebook: string | null;
+    created_at: string;
+  };
+}
+interface GeneralManagerContact {
+  id: number;
+  name: string;
+  phone_number: string;
+  email: string;
+  title: string;
+  telegram: string | null;
+  whatsapp: string | null;
+  facebook: string | null;
+  created_at: string;
+}
+
+interface ContactPerson {
+  id: number;
+  name: string;
+  phone_number: string;
+  email: string;
+  title: string;
+  telegram: string | null;
+  whatsapp: string | null;
+  facebook: string | null;
+  created_at: string;
+}
+
+interface BusinessAddress {
+  id: number;
+  business_address: string;
+  region: string;
+  zone: string;
+  woreda: string;
+  kebele: string;
+  house_number: string;
+  geo_location: string | null;
+  created_at: string;
+}
+
+interface Document {
+  document_id: number;
+  document_type: string;
+  document_name: string;
+  document_path: string;
+  uploaded_by: number;
+  uploaded_at: string;
+  status: string;
+  verified_by: number | null;
+  verified_at: string | null;
+}
+
+interface Issuer {
+  id: number;
+  general_manager_contact: GeneralManagerContact;
+  contact_person: ContactPerson;
+  business_address: BusinessAddress;
+  documents: Document[];
+  user: number;
+  trade_name: string;
+  company_name: string;
+  company_type: string;
+  business_name: string;
+  business_type: string;
+  business_license_number: string;
+  business_description: string;
+  field_of_business: string;
+  number_of_stakeholders: number;
+  number_of_employees: number;
+  tin_number: string;
+  vat_number: string;
+  website: string;
+  capital: string;
+  date_of_establishment: string;
+  renewal_date: string | null;
+  is_verified: boolean;
+  terms_and_condition: boolean;
+  form_data: any | null;
+  created_at: string;
+}
+
+interface CampaignDetailTabsProps {
+  campaignData: CampaignDatas;
+  issuerData: Issuer
+}
+export default function CampaignOverView({
+  campaignData,
+  issuerData
+}: CampaignDetailTabsProps) {
+  console.log("This is the first loaded child component");
+  console.log("This is the data from the parent", campaignData);
+  console.log("This is the value of the Issuer we got from the parent ====> ", issuerData); 
   const defaultData: CampaignOverViewType = {
     about: { aboutUs: "No information available", aboutImage: "" },
     visionAndStrategy: {
@@ -64,6 +213,12 @@ export default function CampaignOverView() {
   const resolvedData = (overview as CampaignOverViewType) || defaultData;
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeLink, setActiveLink] = useState("#about");
+  const getYouTubeVideoId = (url: string) => {
+    const regex =
+      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S+\/\S+\/|\S+\/\S+\/\S+\/|(?:v|e(?:mbed)?)\/?)([\w\-]+)(?=\S)(?:[^\n\s]+)?)/;
+    const match = url.match(regex);
+    return match ? match[1] : "";
+  };
 
   const handleScroll = () => {
     const sections = [
@@ -126,7 +281,7 @@ export default function CampaignOverView() {
   }, []);
 
   return (
-    <div className="flex w-[65%]">
+    <div className="flex w-[68%]">
       {/* Anchor Navigation */}
       <div className="sticky top-0 h-screen overflow-y-auto pr-10">
         <Anchor
@@ -194,34 +349,74 @@ export default function CampaignOverView() {
       <div className="w-3/4 p-4" ref={containerRef}>
         {/* About */}
         <div id="about" className="mb-5 flex flex-col gap-3">
-          <Image
-            src={resolvedData.about.aboutImage}
+          {/* <Image
+            src={campaignData?.cover_image}
             alt="campHero"
             width={200}
             height={200}
             className="h-full w-full object-cover"
           />
+          
+          */}
+          {/* {campaignData?.cover_image ? (
+            <Image
+              src={campaignData.cover_image}
+              alt="campHero"
+              width={200}
+              height={200}
+              className="h-full w-full object-cover"
+            style={'max-height': '300px'}
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center text-gray-500" >
+              {campaignData?.name || "Default Image"}
+            </div>
+          )} */}
+
+
+
+{campaignData?.cover_image ? (
+  <Image
+    src={campaignData.cover_image}
+    alt="campHero"
+    width={200}
+    height={200}
+    className="h-full w-full object-cover"
+    style={{ maxHeight: '300px' }}  // Proper syntax for inline styles
+  />
+) : (
+  <div className="flex h-full w-full items-center justify-center text-gray-500">
+    {campaignData?.name || "Default Image"}
+  </div>
+)}
+
           <h2 className="text-2xl font-bold">About</h2>
           <p className="text-justify text-base font-normal">
-            {resolvedData.about.aboutUs}
+            {campaignData?.project.about_the_project}
           </p>
         </div>
 
         {/* Vision */}
         <div id="visionandStrategy" className="mb-5 flex flex-col gap-3">
-          <Image
-            src={resolvedData.visionAndStrategy.visionVideo}
-            alt="campHero"
-            width={200}
-            height={200}
-            className="h-full w-full object-cover"
-          />
+      
+
+          <iframe
+            width="100%"
+            height="315"
+            src={campaignData?.video_url}
+            title="YouTube video player"
+            // frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            // referrerpolicy="strict-origin-when-cross-origin"
+            // allowfullscreen
+          ></iframe>
+
           <h2 className="text-2xl font-bold">Vision and Strategy</h2>
           <h4 className="text-base font-bold">
             {resolvedData.visionAndStrategy.visionTitle}
           </h4>
           <p className="text-justify text-base font-normal">
-            {resolvedData.visionAndStrategy.visionDescription}
+            {campaignData?.project.vision_and_strategy}
           </p>
         </div>
 
@@ -298,7 +493,7 @@ export default function CampaignOverView() {
         <div id="customers" className="mb-5 flex flex-col gap-3">
           <h2 className="text-2xl font-bold">Customers</h2>
           <p className="text-justify text-base font-normal">
-            {resolvedData.customers}
+            {campaignData?.project.customers}
           </p>
         </div>
 
@@ -306,7 +501,7 @@ export default function CampaignOverView() {
         <div id="tractions" className="mb-5 flex flex-col gap-3">
           <h2 className="text-2xl font-bold">Tractions</h2>
           <p className="text-justify text-base font-normal">
-            {resolvedData.tractions}
+            {campaignData?.project.traction}
           </p>
         </div>
 
@@ -335,12 +530,12 @@ export default function CampaignOverView() {
         <div id="howItWorks" className="mb-5 flex flex-col gap-3">
           <h2 className="text-2xl font-bold">How It Works</h2>
           <ul className="list-disc pl-5">
-            {resolvedData.howItWorks.map((item) => (
-              <li key={item.key} className="text-justify text-base font-normal">
-                <h3 className="font-semibold">{item.title}</h3>
-                <p>{item.description}</p>
+            {/* {resolvedData.howItWorks.map((item) => ( */}
+              <li  className="text-justify text-base font-normal">
+                {/* <h3 className="font-semibold">{item.title}</h3> */}
+                <p>{campaignData?.project.how_it_works}</p>
               </li>
-            ))}
+            {/* ))} */}
           </ul>
         </div>
 

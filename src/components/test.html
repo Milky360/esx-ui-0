@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bid Summary Notification</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1c1c1e;
+      background-color: #f2f2f7;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      font-size: 22px;
+      font-weight: 600;
+      color: #1c1c1e;
+      text-align: center;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e0e0e5;
+    }
+
+    .section-title {
+      font-size: 16px;
+      color: #007aff;
+      margin-top: 24px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      padding-left: 6px;
+      border-left: 4px solid #007aff;
+    }
+
+    .bid-item {
+      padding: 18px 20px;
+      background-color: #f9f9fb;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .bid-item:hover {
+      transform: scale(1.01);
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .bid-header {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1c1c1e;
+      margin-bottom: 8px;
+    }
+
+    .bid-details {
+      margin: 6px 0;
+      color: #3a3a3c;
+      font-size: 14px;
+    }
+
+    .bid-details strong {
+      color: #1c1c1e;
+    }
+
+    .status-cancelled {
+      color: #d70015;
+    }
+
+    .status-dropped {
+      color: #e07100;
+    }
+
+    .status-prospecting {
+      color: #007aff;
+    }
+
+    .status-active {
+      color: #007aff;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #636366;
+      background-color: #f2f2f7;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 24px;
+    }
+
+    .footer {
+      font-size: 12px;
+      color: #8e8e93;
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 12px;
+      border-top: 1px solid #e0e0e5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">Bid Summary Notification</div>
+
+    <div class="section-title">Upcoming Bids</div>
+
+    <div class="section-title">Active Bids</div>
+
+    <div class="bid-item">
+      <div class="bid-header">Imagine 1day International Organization</div>
+      <div class="bid-details">
+        <strong>Opportunity Type:</strong> <a href="#" class="opportunity-link"><strong>Invitation for
+            Bid</strong></a><br>
+        <strong>Sales Stage:</strong> <span class="status-cancelled">Cancelled</span><br>
+        <strong>Status:</strong> Inactive<br>
+        <strong>Bid Owner:</strong> [Owner's Name]
+      </div>
+      <div class="bid-details">
+        <strong>Published On:</strong> Nov 05, 2024, 02:26 PM<br>
+        <strong>Bid Closing Date:</strong> Nov 11, 2024, 09:00 AM<br>
+        <strong>Last Active Date:</strong> Nov 10, 2024<br>
+        <strong>Expires In:</strong> 0 day(s), 5 hour(s), 59 minute(s)
+      </div>
+    </div>
+
+    <div class="bid-item">
+      <div class="bid-header">The Centre for Victims of Torture (CVT)</div>
+      <div class="bid-details">
+        <strong>Opportunity Type:</strong> <a href="#" class="opportunity-link"><strong>Supply and Delivery of Laptop
+            Computers</strong></a><br>
+        <strong>Sales Stage:</strong> <span class="status-dropped">Dropped</span><br>
+        <strong>Status:</strong> Inactive<br>
+        <strong>Bid Owner:</strong> [Owner's Name]
+      </div>
+      <div class="bid-details">
+        <strong>Published On:</strong> Nov 05, 2024, 02:10 PM<br>
+        <strong>Bid Closing Date:</strong> Nov 12, 2024, 10:00 AM<br>
+        <strong>Last Active Date:</strong> Nov 11, 2024<br>
+        <strong>Expires In:</strong> 1 day(s), 6 hour(s), 59 minute(s)
+      </div>
+    </div>
+
+    <div class="section-title">Prospecting Bids</div>
+    <div class="bid-item">
+      <div class="bid-header">National Insurance Company of Ethiopia S.C. (NICE)</div>
+      <div class="bid-details">
+        <strong>Opportunity Type:</strong> <a href="#" class="opportunity-link"><strong>IT Consultant for Core Insurance
+            Software Implementation</strong></a><br>
+        <strong>Sales Stage:</strong> <span class="status-prospecting">Prospecting</span><br>
+        <strong>Status:</strong> Active<br>
+        <strong>Bid Owner:</strong> [Owner's Name]
+      </div>
+      <div class="bid-details">
+        <strong>Published On:</strong> Nov 08, 2024, 03:02 PM<br>
+        <strong>Bid Closing Date:</strong> Nov 15, 2024, 10:00 AM<br>
+        <strong>Last Active Date:</strong> Nov 14, 2024<br>
+        <strong>Expires In:</strong> 4 day(s), 6 hour(s), 59 minute(s)
+      </div>
+    </div>
+
+    <div class="bid-item">
+      <div class="bid-header">United Nations (UN)</div>
+      <div class="bid-details">
+        <strong>Opportunity Type:</strong> <a href="#" class="opportunity-link"><strong>Supply of Red Hat Enterprise
+            Linux License and Support Renewal</strong></a><br>
+        <strong>Sales Stage:</strong> <span class="status-prospecting">Prospecting</span><br>
+        <strong>Status:</strong> Active<br>
+        <strong>Bid Owner:</strong> [Owner's Name]
+      </div>
+      <div class="bid-details">
+        <strong>Published On:</strong> Nov 07, 2024, 03:30 PM<br>
+        <strong>Bid Closing Date:</strong> Nov 13, 2024, 04:00 PM<br>
+        <strong>Last Active Date:</strong> Nov 12, 2024<br>
+        <strong>Expires In:</strong> 2 day(s), 12 hour(s), 59 minute(s)
+      </div>
+    </div>
+
+    <div class="section-title">Document Required Bids</div>
+
+    <div class="bid-item">
+      <div class="bid-header">Dashen Bank</div>
+      <div class="bid-details">
+        <strong>Opportunity Type:</strong> <a href="#" class="opportunity-link"><strong>Procurement of Different
+            Materials</strong></a><br>
+        <strong>Sales Stage:</strong> Document Required<br>
+        <strong>Status:</strong> Active<br>
+        <strong>Bid Owner:</strong> [Owner's Name]
+      </div>
+      <div class="bid-details">
+        <strong>Published On:</strong> Nov 05, 2024, 09:54 AM<br>
+        <strong>Bid Closing Date:</strong> Nov 15, 2024, 05:00 PM<br>
+        <strong>Last Active Date:</strong> Nov 14, 2024<br>
+        <strong>Expires In:</strong> 4 day(s), 13 hour(s), 59 minute(s)
+      </div>
+    </div>
+
+    <div class="note">
+      Note: Please review each bid’s status and ensure necessary documents and preparations are completed before the
+      respective expiration dates. For questions, reach out to [Support Contact Info].
+    </div>
+
+    <div class="footer">
+      This email was auto-generated. Please do not reply.
+    </div>
+  </div>
+</body>
+
+</html>

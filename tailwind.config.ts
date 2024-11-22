@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        background: "var(--body-background)",
         foreground: "var(--foreground)",
         esxmain: "var(--esx-main-color)",
         darker1: "var(--esx-darker1)",

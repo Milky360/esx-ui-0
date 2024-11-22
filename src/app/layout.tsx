@@ -1,3 +1,4 @@
+import { ConfigProvider } from "antd";
 import { getServerSession } from "next-auth";
 import NextTopLoader from "nextjs-toploader";
 
@@ -16,13 +17,22 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SessionProvider session={session}>
-          <NextTopLoader />
-          <Providers>
-            <GlobalHeader />
-            {children}
-          </Providers>
-        </SessionProvider>
+        <ConfigProvider
+          theme={{
+            token: {
+              // colorPrimary: "#005798",
+              fontFamily: "Helvetica Neue, sans-serif",
+            },
+          }}
+        >
+          <SessionProvider session={session}>
+            <NextTopLoader />
+            <Providers>
+              <GlobalHeader />
+              {children}
+            </Providers>
+          </SessionProvider>
+        </ConfigProvider>
       </body>
     </html>
   );

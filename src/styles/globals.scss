@@ -1,151 +1,429 @@
-/* Tailwind Base */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  /* Tailwind Base */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 
-/* Global Reset */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  /* Global Reset */
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-/* Root Variables */
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-helveticaneue: "Helvetica Neue", sans-serif;
+  /* Root Variables */
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --font-helveticaneue: "Helvetica Neue", sans-serif;
 
-  /* Primary Colors */
-  --esx-main-color: #0045ff;
-  --esx-main-lighter: #325fd6;
-  --esx-darker1: #103eba;
-  --esx-darker2: #103eba;
-  --lighter: #0045ff;
+    /* Primary Colors */
+    --esx-main-color: #0045ff;
+    --esx-main-lighter: #325fd6;
+    --esx-darker1: #103eba;
+    --esx-darker2: #103eba;
+    --lighter: #0045ff;
 
-  /* Accent Colors */
-  --progress-color: #16d758;
+    /* Accent Colors */
+    --progress-color: #16d758;
 
-  /* Background Colors */
-  --body-background: #f8f9ff;
-  --body-background2: #f3f6ff;
+    /* Background Colors */
+    --body-background: #f8f9ff;
+    --body-background2: #f3f6ff;
+
+    /* Forms */
+    --form-name-color: #0045ff;
+  }
+
+  /* Dark Mode Adjustments */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Uncomment if needed:
+      --background: #0a0a0a;
+      --foreground: #ededed;
+      */
+    }
+  }
+
+  /* Base Styles */
+  body {
+    color: var(--foreground);
+    background: var(--body-background);
+    font-family: var(--font-helveticaneue), sans-serif;
+  }
+
+  /* Tailwind Custom Utilities */
+  @layer utilities {
+    .text-balance {
+      text-wrap: balance;
+    }
+  }
+
+  /* Custom Components */
 
   /* Forms */
-  --form-name-color: #0045ff;
-}
-
-/* Dark Mode Adjustments */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Uncomment if needed:
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    */
+  .text-form-name {
+    color: var(--form-name-color);
   }
-}
 
-/* Base Styles */
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-helveticaneue), sans-serif;
-}
-
-/* Tailwind Custom Utilities */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-form-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 100px;
   }
-}
 
-/* Custom Components */
+  .registration-form-border {
+    border: 1px solid #e6e6e6;
+  }
 
-/* Forms */
-.text-form-name {
-  color: var(--form-name-color);
-}
+  /* Campaign Cards */
+  .campaignCard {
+    background: #fff;
+    height: 427px;
+    width: 352px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
 
-.text-form-title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 100px;
-}
+  .campaignCardProgress {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 5px 21px;
+    position: relative;
+    top: -47px;
+  }
 
-.registration-form-border {
-  border: 1px solid #e6e6e6;
-}
+  .campaignCardRaised,
+  .campaignCardTarget {
+    font-size: 16px;
+    font-weight: 500;
+  }
 
-/* Campaign Cards */
-.campaignCard {
-  background: #fff;
-  height: 427px;
-  width: 352px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
+  .campaignCardInfoContainer {
+    padding: 0 10px;
+    position: relative;
+    top: -30px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    height: 95px;
+  }
 
-.campaignCardProgress {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 5px 21px;
-  position: relative;
-  top: -47px;
-}
+  .campaignCardTitle,
+  .campaignCardDescription {
+    margin-bottom: 12px;
+  }
 
-.campaignCardRaised,
-.campaignCardTarget {
-  font-size: 16px;
-  font-weight: 500;
-}
+  .campaignCardTitle {
+    font-size: 16px;
+    font-weight: 400;
+  }
 
-.campaignCardInfoContainer {
-  padding: 0 10px;
-  position: relative;
-  top: -30px;
-  overflow: hidden;
-  margin-bottom: 12px;
-  height: 95px;
-}
+  .campaignCardDescription {
+    font-size: 18px;
+    font-weight: 700;
+  }
 
-.campaignCardTitle,
-.campaignCardDescription {
-  margin-bottom: 12px;
-}
+  .campaignCardBody,
+  .campaignCardFooter {
+    width: 304px;
+    background-color: #ffffff;
+    margin: auto;
+  }
 
-.campaignCardTitle {
-  font-size: 16px;
-  font-weight: 400;
-}
+  .campaignCardBody {
+    height: 78px;
+  }
 
-.campaignCardDescription {
-  font-size: 18px;
-  font-weight: 700;
-}
+  .campaignCardFooter {
+    position: absolute;
+    bottom: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
 
-.campaignCardBody,
-.campaignCardFooter {
-  width: 304px;
-  background-color: #ffffff;
-  margin: auto;
-}
+  .birrLable {
+    font-size: 10px;
+    font-weight: 500;
+  }
 
-.campaignCardBody {
-  height: 78px;
-}
+  // .custom-tabs .ant-tabs-nav {
+  //   border: none !important;
+  //   padding: 0 !important;
 
-.campaignCardFooter {
-  position: absolute;
-  bottom: 15px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-}
+  // }
 
-.birrLable {
-  font-size: 10px;
-  font-weight: 500;
-}
+  // .custom-tabs .ant-tabs-tab {
+  //   border: none !important;
+  // }
+
+  // .custom-tabs .ant-tabs-tab-active {
+  // border: none !important;
+  // }
+
+  // .custom-tabs .ant-tabs-bar {
+  //   background-color: transparent !important;
+  // }
+
+  /* Custom Tab Styling */
+  /* Style for Taps */
+  .ant-tabs-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    border-bottom: none !important;
+    user-select: none;
+  }
+
+  /* Tab styles */
+  .ant-tabs-tab.ant-tabs-tab-active {
+    border-bottom: none !important;
+  }
+
+  .ant-tabs-ink-bar {
+    height: 0 !important;
+  }
+
+  .ant-tabs-nav-wrap {
+    padding-top: 16px;
+  }
+
+  .custom-tabs .ant-tabs-tab {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    border-radius: 9999px;
+    background-color: #ffffff !important;
+    color: #000 !important;
+
+    box-shadow: 0px 4px 4px rgba(219, 219, 219, 0.25);
+    border: 1px solid #f6f6f6;
+    font-size: 0.875rem;
+    margin: 1px 4px;
+  }
+
+  .ant-tabs-nav::before {
+    display: none;
+  }
+
+
+  /* Hover state with gradient */
+  .custom-tabs .ant-tabs-tab:hover {
+    background: linear-gradient(to right, #103eba 0%, #103eba 90%) !important;
+    color: #fff !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    // transform: scale(1.05);
+  }
+
+  /* Active state with gradient */
+  .custom-tabs .ant-tabs-tab-active {
+    background: linear-gradient(to right, #0045ff 0%, #325fd6 100%) !important;
+    color: #fff !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .custom-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #fff !important;
+  }
+
+  .custom-tabs .ant-tabs-tab .ant-tabs-tab-btn:hover {
+    color: #fff !important;
+  }
+
+  //
+  .custom-phone-input .react-phone-number-input__icon img {
+    width: 200px !important;
+    height: 30px;
+  }
+
+  .custom-phone-input .react-phone-number-input__icon img {
+    width: 40px !important; /* Adjust the width as needed */
+    height: auto !important; /* Maintain aspect ratio */
+  }
+
+  .custom-phone-input .react-phone-number-input__icon {
+    width: 40px !important; /* Match the flag's width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Target the PhoneInputCountrySelect */
+  // .PhoneInputCountry  {
+  //   width: 450px !important; /* Adjust the width as needed */
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+
+  /* To specifically target the flag image inside PhoneInputCountrySelect */
+  .PhoneInputCountryIcon {
+    width: 40px !important;
+    height: 40px !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-right: 10px !important;
+    color: black !important;
+  }
+
+  .PhoneInputCountrySelectArrow {
+    width: 12px !important;
+    height: 12px !important;
+    // margin-left: 35px !important;
+    color: black !important;
+    fill: black !important;
+    font-weight: bolder !important;
+    margin-right: 5px !important;
+  }
+
+  // .PhoneInput .PhoneInputInput {
+  //   border: none !important;
+  //   background-color: red; /* Example styling */
+  // }
+
+  .PhoneInput .PhoneInputInput {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important; /* Remove shadow-like borders */
+    // background-color: red; /* Example styling */
+  }
+
+  .ant-card ant-card-bordered css-dev-only-do-not-override-ni1kz0 {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .ant-card-head {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .ant-card-body {
+    margin-top: -30px;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .ant-card-head-title span {
+    font-size: 30px !important;
+  }
+
+  .ant-card-body p {
+    font-size: 27px !important;
+  }
+
+  .ant-pagination-item-active {
+    background-color: #1814f3 !important;
+  }
+
+  .ant-pagination-item-active a {
+    color: white !important;
+  }
+
+  .ant-space-item span {
+    color: #1814f3 !important;
+  }
+
+  .ant-pagination-prev button {
+    color: #1814f3 !important;
+  }
+
+  /* Style for the entire DatePicker input */
+  .custom-datepicker .ant-picker-input {
+    padding-left: 30px; /* Add space on the left side for the calendar icon */
+  }
+
+  /* Style for the calendar icon inside the suffix */
+  .custom-datepicker .ant-picker-suffix {
+    color: blue !important; /* Ensure the calendar icon is blue */
+    left: 10px; /* Position the calendar icon properly */
+  }
+
+  /* Optional: You can also adjust the icon size if needed */
+  .custom-datepicker .ant-picker-suffix .anticon {
+    font-size: 18px !important; /* Adjust the size of the calendar icon */
+  }
+
+  /* Target the DatePicker container */
+  .ant-picker {
+    display: flex; /* Ensure it's a flex container */
+    flex-direction: row-reverse; /* Reverse the row order to move the suffix icon to the left */
+  }
+
+  /* Adjust the input alignment */
+  .ant-picker-input {
+    order: 2; /* Ensure the input remains on the right */
+    flex-grow: 1; /* Allow the input to take the remaining space */
+  }
+
+  /* Style the suffix (calendar icon) */
+  // .ant-picker-suffix span {
+  //   text-align: left !important;
+  //   color: red !important;
+
+  // }
+
+  // .ant-picker {
+  //   position: relative; /* Ensure the container is positioned */
+  //   padding-left: 150px; /* Add space on the left for the icon */
+  // }
+
+  // .ant-picker-suffix {
+  //   position: absolute;
+  //   left: -10px; /* Move the icon to the left */
+  //   top: 50%; /* Center it vertically */
+  //   transform: translateY(-50%);
+  //   color: red !important; /* Apply your desired color */
+  //   pointer-events: none; /* Ensure the icon doesn't interfere with input clicks */
+  // }
+
+  // .ant-picker-input  input {
+  //   margin-left: 20px; /* Ensure the input text doesn't overlap with the icon */
+  // }
+  // // .anticon-calendar {
+  // //   size: '40px' !important;
+  // // }
+
+  .ant-picker {
+    position: relative; /* Ensure the container is positioned */
+    padding-left: 150px; /* Add space on the left for the icon */
+  }
+
+  .ant-picker-suffix {
+    position: absolute;
+    left: -10px; /* Move the icon to the left */
+    top: 50%; /* Center it vertically */
+    transform: translateY(-50%);
+    color: red !important; /* Apply your desired color */
+    pointer-events: none; /* Ensure the icon doesn't interfere with input clicks */
+  }
+
+  .ant-picker-suffix svg {
+    font-size: 20px; /* Adjust font size to increase icon size */
+    width: 20px; /* Explicitly set width */
+    height: 20px; /* Explicitly set height */
+  }
+
+  .ant-picker-input input {
+    margin-left: 20px; /* Ensure the input text doesn't overlap with the icon */
+  }
+
+  .select-date-antd {
+    width: 140px;
+  }
+
+  .ant-picker-clear {
+    margin-left: 20px !important;
+  }
+
+  // .ant-tabs-tab-btn {
+  //   font-size: 20px;
+  //   text-decoration: underline;
+  // }
